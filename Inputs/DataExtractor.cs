@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
+using Inputs.BagRules;
 
 namespace Inputs
 {
@@ -90,6 +91,50 @@ namespace Inputs
                 .ToList();
         }
 
+        public static BagRule[] Day7(string testData = null)
+        {
+            return
+                (
+                    testData != null
+                        ? GetInputFromString(testData)
+                        : GetTextFile("Day7")
+                )
+                .AsStringLines()
+                .Select(rule =>
+                {
+                    var split = rule.Replace("contain", "~").Split('~');
+
+                    if (split[1].Trim().StartsWith("no"))
+                    {
+                        return new BagRule
+                        {
+                            Bag = Bag(split[0])
+                        };
+                    }
+                    
+                    return new BagRule
+                    {
+                        Bag = Bag(split[0]),
+                        Contents = split[1]
+                            .Split(',')
+                            .Select(Bag)
+                            .Select(x =>
+                                (Bag(x.Substring(2)), int.Parse(x[0].ToString())))
+                            .ToArray()
+                    };
+                })
+                .ToArray();
+
+            string Bag(string bag)
+            {
+                return bag
+                    .Replace(" bags", "")
+                    .Replace(" bag", "")
+                    .Replace(".", "")
+                    .Trim();
+            }
+        }
+
         private static Input GetTextFile(string filename)
         {
             var assembly = Assembly.GetExecutingAssembly();
@@ -103,6 +148,11 @@ namespace Inputs
             }
 
             return new Input(result);
+        }
+
+        private static Input GetInputFromString(string input)
+        {
+            return new Input(input);
         }
     }
 }

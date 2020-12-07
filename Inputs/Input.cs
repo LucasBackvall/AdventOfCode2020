@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Inputs.BagRules;
 
 namespace Inputs
 {
@@ -23,17 +24,17 @@ namespace Inputs
                 .Select(x => new Input(x));
         }
 
+        public IEnumerable<string> AsStringGroups()
+        {
+            return AsGroups().AsStrings();
+        }
+
         public IEnumerable<Input> AsLines()
         {
             return Data
                 .Split('\n')
                 .Where(x => !string.IsNullOrWhiteSpace(x))
                 .Select(x => new Input(x));
-        }
-
-        public IEnumerable<string> AsStringGroups()
-        {
-            return AsGroups().AsStrings();
         }
 
         public IEnumerable<string> AsStringLines()
