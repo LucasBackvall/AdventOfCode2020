@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Raw\Day1.txt" />
+    <None Remove="Raw\Day2.txt" />
+    <None Remove="Raw\Day3.txt" />
+    <None Remove="Raw\Day4.txt" />
+    <None Remove="Raw\Day5.txt" />
+    <None Remove="Raw\Day6.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Raw\Day1.txt" />
+    <EmbeddedResource Include="Raw\Day2.txt" />
+    <EmbeddedResource Include="Raw\Day3.txt" />
+    <EmbeddedResource Include="Raw\Day4.txt" />
+    <EmbeddedResource Include="Raw\Day5.txt" />
+    <EmbeddedResource Include="Raw\Day6.txt" />
+  </ItemGroup>
+
+</Project>
