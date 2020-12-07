@@ -36,8 +36,7 @@ namespace Inputs
         public static string[] Day3()
         {
             return GetTextFile("Day3")
-                .AsLines()
-                .AsStrings()
+                .AsStringLines()
                 .ToArray();
         }
 
