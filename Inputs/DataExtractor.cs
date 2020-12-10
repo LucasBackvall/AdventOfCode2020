@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using Inputs.BagRules;
+using Inputs.MachineCode;
 
 namespace Inputs
 {
@@ -133,6 +134,25 @@ namespace Inputs
                     .Replace(".", "")
                     .Trim();
             }
+        }
+
+        public static MachineCodeInstruction[] Day8()
+        {
+            return GetTextFile("Day8")
+                .AsStringLines()
+                .Select(row =>
+                    new MachineCodeInstruction
+                    {
+                        Operation = row.Split(' ').FirstOrDefault(),
+                        Argument = int.Parse(
+                            row
+                                .Split(' ')
+                                .LastOrDefault()?
+                                .Trim()
+                                ?? ""
+                        )
+                    }
+                ).ToArray();
         }
 
         private static Input GetTextFile(string filename)

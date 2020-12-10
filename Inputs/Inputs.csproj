@@ -22,6 +22,8 @@
     <EmbeddedResource Include="Raw\Day5.txt" />
     <EmbeddedResource Include="Raw\Day6.txt" />
     <EmbeddedResource Include="Raw\Day7.txt" />
+    <None Remove="Raw\Day8.txt" />
+    <EmbeddedResource Include="Raw\Day8.txt" />
   </ItemGroup>
 
 </Project>
