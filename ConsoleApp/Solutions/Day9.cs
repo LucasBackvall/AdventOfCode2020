@@ -33,7 +33,20 @@ namespace ConsoleApp.Solutions
 
         public static long Part2()
         {
-            return 0;
+            var invalidNumber = 50047984;
+            
+            var input = DataExtractor.Day9();
+
+            // Why does this return empty array?
+            // I thought I had to add adjacency checking to a large set of numbers
+            var contiguousRange = input.Where(x => 
+                input.Any(y =>
+                    invalidNumber == x + y
+                    && x != y
+                )
+            ).ToArray();
+            
+            return contiguousRange.Min() + contiguousRange.Max();
         }
     }
 }
