@@ -134,6 +134,14 @@ namespace Inputs
             }
         }
 
+        public static long[] Day9()
+        {
+            return GetTextFile("Day9")
+                .AsStringLines()
+                .Select(long.Parse)
+                .ToArray();
+        }
+
         private static Input GetTextFile(string filename)
         {
             var assembly = Assembly.GetExecutingAssembly();

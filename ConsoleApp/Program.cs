@@ -14,6 +14,7 @@ namespace ConsoleApp
             Console.WriteLine("Day5\n{0} {1}", Day5.Part1(), Day5.Part2());
             Console.WriteLine("Day6\n{0} {1}", Day6.Part1(), Day6.Part2());
             Console.WriteLine("Day7\n{0} {1}", Day7.Part1(), Day7.Part2());
+            Console.WriteLine("Day9\n{0} {1}", Day9.Part1(), Day9.Part2());
         }
     }
 }
