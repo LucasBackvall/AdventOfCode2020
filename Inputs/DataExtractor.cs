@@ -140,9 +140,10 @@ namespace Inputs
         {
             return GetTextFile("Day8")
                 .AsStringLines()
-                .Select(row =>
+                .Select((row, address) =>
                     new MachineCodeInstruction
                     {
+                        Address = address,
                         Operation = row.Split(' ').FirstOrDefault(),
                         Argument = int.Parse(
                             row

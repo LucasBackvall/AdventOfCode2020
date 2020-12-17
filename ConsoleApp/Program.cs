@@ -7,6 +7,7 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
+            Console.WriteLine($"args: {args}");
             Console.WriteLine("Day1\n{0} {1}", Day1.Part1(), Day1.Part2());
             Console.WriteLine("Day2\n{0} {1}", Day2.Part1(), Day2.Part2());
             Console.WriteLine("Day3\n{0} {1}", Day3.Part1(), Day3.Part2());
@@ -14,6 +15,8 @@ namespace ConsoleApp
             Console.WriteLine("Day5\n{0} {1}", Day5.Part1(), Day5.Part2());
             Console.WriteLine("Day6\n{0} {1}", Day6.Part1(), Day6.Part2());
             Console.WriteLine("Day7\n{0} {1}", Day7.Part1(), Day7.Part2());
+            Console.WriteLine("\n---------\nDay8 Debug\n{0}", Day8.Part2_Debug());
+            Console.WriteLine("\n---------");
             Console.WriteLine("Day8\n{0} {1}", Day8.Part1(), Day8.Part2());
         }
     }
