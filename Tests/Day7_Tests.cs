@@ -2,7 +2,7 @@
 using Inputs.BagRules;
 using NUnit.Framework;
 
-namespace Tests.Day7
+namespace Tests
 {
     [TestFixture]
     public class FixtureDay7

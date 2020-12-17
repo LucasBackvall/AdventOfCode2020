@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace Inputs.BagRules
+﻿namespace Inputs.BagRules
 {
     public class BagRule
     {
